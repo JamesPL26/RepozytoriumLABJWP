@@ -1,6 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import Hello from './Hello';
+import Counter from './Counter';
+import InputTracker from './InputTracker';
+
+function HelloWithProps(props) {
+ return <h1>Witaj, {props.name}!</h1>;
+}
 
 function App() {
   return (
@@ -17,11 +23,26 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
+
+        </a>
           Zadanie1
           <Hello/>
-        </a>
+          Zadanie2.2
+           <HelloWithProps name="Jakub" />
+          <HelloWithProps name="Maciej" />
+          <HelloWithProps name="Kamil" />
+
+          Zadanie2.3
+          <Counter/>
+          Zadanie2.4
+          <InputTracker/>
       </header>
+
+
     </div>
+
+
+
   );
 }
 
