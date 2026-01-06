@@ -83,42 +83,37 @@
 				<h1>Języki wysokiego poziomu <br> w aplikacjach internetowych</h1>
 				<div class="row">
 					<div class="col-md-2" align="left">
-						<p>nazwisko:</p>
+						<p id="nazwisko"></p>
 					</div>
 					<div class="col-md-4">
-						<p></p>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-2" align="left">
-						<p>imię:</p>
+						<p id="imie"></p>
 					</div>
 					<div class="col-md-4">
-						<p></p>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-2" align="left">
-						<p>grupa:</p>
+						<p id="grupa"></p>
 					</div>
 					<div class="col-md-4">
-						<p></p>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-2" align="left">
-						<p>email:</p>
+						<p id="email"></p>
 					</div>
 					<div class="col-md-4">
-						<p></p>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-2" align="left">
-						<p>nr indeksu:</p>
+						<p id="indeks"></p>
 					</div>
 					<div class="col-md-4">
-						<p></p>
 					</div>
 				</div>
 
@@ -204,11 +199,49 @@
 	</section>
 
 	<script>
+		//Zadanie 4
+		document.getElementById("nazwisko").innerHTML = "Nazwisko: Błaszczyk";
+document.getElementById("imie").innerHTML = "Imię: Jakub";
+document.getElementById("grupa").innerHTML = "Grupa: 1";
+document.getElementById("email").innerHTML = "Email: 21175@student.ans-elblag.pl";
+document.getElementById("indeks").innerHTML = "Nr indeksu: 21175";
+
+const pElements = document.querySelectorAll("#main-page p");
+pElements[0].innerHTML = "Nazwisko: " + tablica[0];
+pElements[1].innerHTML = "Imię: " + tablica[1];
+
+let i = 0;
+let wynikWhile = "<p><strong>Pętla WHILE (połowa tablicy):</strong></p><ul>";
+
+while (i < Math.floor(tablica.length / 2)) {
+    wynikWhile += "<li>" + tablica[i] + "</li>";
+    i++;
+}
+wynikWhile += "</ul>";
+
+document.getElementById("projekt1").innerHTML += wynikWhile;
+
+let wynikFor = "<p><strong>Pętla FOR (połowa tablicy):</strong></p><ul>";
+
+for (let j = 0; j < Math.floor(tablica.length / 2); j++) {
+    wynikFor += "<li>" + tablica[j] + "</li>";
+}
+wynikFor += "</ul>";
+
+document.getElementById("projekt1").innerHTML += wynikFor;
+
+function pokazDane() {
+    alert(
+        document.getElementById("imie").innerText + "\n" +
+        document.getElementById("nazwisko").innerText + "\n" +
+        document.getElementById("email").innerText
+    );
+}
 		//Zadanie 5
     let questions = [
         ['Kto jest rekordzistą świata w długości skoku (2025)?', 'Domen Prevc'],
         ['Ile zawodników startuje w konkursie indywidualnym PŚ?', '50'],
-        ['Który zawodnik ma najwięcej zwycięstw w PŚ?', 'Matti Nykanen']
+        ['Który zawodnik ma najwięcej zwycięstw w PŚ?', 'Gregor Schlierenzauer']
     ];
 
     let score = 0;
